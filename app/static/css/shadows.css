@@ -1,0 +1,39 @@
+.project-card-container {
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+}
+
+.project-title {
+  text-shadow: 2px 2px 5px black;
+}
+
+.skill-level {
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+}
+
+.skill-name {
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+  text-shadow: 1px 1px 2px black;
+}
+
+#copyright {
+  text-shadow: 1px 1px 2px black;
+}
+
+#myAge {
+  text-shadow: 1px 1px 2px black;
+}
+
+#myCountry {
+  text-shadow: 1px 1px 2px black;
+}
+
+#myCity {
+  text-shadow: 1px 1px 2px black;
+}
+
+#myBiography {
+  text-shadow: 0.5px 0.5px 1px black;
+}

@@ -1,0 +1,270 @@
+.projects {
+  color: #343a40;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-wrapper {
+  width: 80%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.projects-wrapper .project-card-container {
+  position: relative;
+  width: 45%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-right: 0px;
+  margin-left: 0px;
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.projects-wrapper .project-card-container .project-image-wrapper {
+  width: 100%;
+}
+
+.projects-wrapper .project-card-container .project-image-wrapper .project-image {
+  width: 100%;
+}
+
+.projects-wrapper .project-card-container .project-title {
+  padding: 10px;
+  font-family: 'Poly', serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.projects-wrapper .project-card-container .project-description-block {
+  width: 100%;
+  height: 100%;
+  background-color: #343a40;
+  position: absolute;
+  z-index: -1;
+  padding: 10px;
+}
+
+.projects-wrapper .project-card-container .project-description-block .close-button {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+  float: right;
+}
+
+.projects-wrapper .project-card-container .project-description-block .close-button .line-1 {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  background-color: #dc3545;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+.projects-wrapper .project-card-container .project-description-block .close-button .line-2 {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  background-color: #dc3545;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+.projects-wrapper .project-card-container .project-description-block .close-button:hover .line-1 {
+  background-color: #f8f9fa;
+}
+
+.projects-wrapper .project-card-container .project-description-block .close-button:hover .line-2 {
+  background-color: #f8f9fa;
+}
+
+.projects-wrapper .project-card-container .project-route-block {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.projects-wrapper .project-card-container .project-route-block .project-route-button {
+  width: 100px;
+  height: 50px;
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #343a40;
+  border-radius: 5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: 'Poly', serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.projects-wrapper .project-card-container .project-route-block .project-route-button:hover {
+  border-radius: 10px;
+  font-size: 120%;
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+.my-work {
+  margin: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 80%;
+}
+
+.down-line {
+  width: 80%;
+  height: 4px;
+  background-color: #5f7181;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.used-technologies {
+  padding: 5px;
+  width: 80%;
+  text-align: center;
+  margin: 5px;
+  font-size: 90%;
+  word-wrap: break-word;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-link {
+  color: #f8f9fa;
+  margin: 10px;
+  display: block;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.project-link:hover {
+  color: #007bff;
+}
+
+@media only screen and (max-width: 800px) {
+  .project-card-container {
+    width: 100% !important;
+  }
+  .project-title {
+    font-size: 80%;
+  }
+  .used-technologies {
+    font-size: 70%;
+  }
+  .my-work {
+    font-size: 70%;
+  }
+  .project-link {
+    font-size: 80%;
+  }
+  .project-route-button {
+    font-size: 90%;
+  }
+  .project-route-button:hover {
+    font-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .project-card-container {
+    width: 100% !important;
+  }
+  .project-title {
+    font-size: 70%;
+  }
+  .used-technologies {
+    font-size: 60%;
+  }
+  .my-work {
+    font-size: 60%;
+  }
+  .project-link {
+    font-size: 70%;
+  }
+  .project-route-button {
+    font-size: 80%;
+  }
+  .project-route-button:hover {
+    font-size: 90%;
+  }
+}

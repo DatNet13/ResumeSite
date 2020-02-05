@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="head">{% load static %}{% static "" as static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/css/bpg-nino-mtavruli.min.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/shortcut.png' %}">
+    <meta name="theme-color" content="#000000">
+    <meta name="keywords" content="{{ me.first_name }} {{ me.last_name }} {% for skill in skills %} {{ skill.skill_name }} {% endfor %} {{ me.biography }}">
+    <meta name="description" content="{{ me.first_name }} {{ me.last_name }} {{ age }}  {% for skill in skills %} {{ skill.skill_name }} {% endfor %} {{ me.biography }}">
+    <title>{{ me.first_name }} {{ me.last_name }}'s Resume</title>
+    <!--C S S   S T Y L E S-->
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shadows.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts_en.css' %}">
+</head>
+<body id="body">
+    <!--H E A D E R-->
+    <header>
+        <!--N A V-->
+
+        <nav id="nav">
+            <!--L O G O-->
+            
+            <a id="home" href="{% url 'en' %}">
+                Home
+            </a>
+
+            <!--E N D  O F  L O G O-->
+
+            <!--N A V  I T E M S-->
+            <!--items list-->
+            <div class="router">
+                <!--About-->
+                <a id="about" class="route">
+                    <div id="aboutLineTop" class="line-top"></div>
+                    About
+                    <div id="aboutLineBottom"  class="line-down"></div>
+                </a>
+                <!--Skills-->
+                <a id="skills" class="route">
+                    <div id="skillsLineTop" class="line-top"></div>
+                    Skills
+                    <div id="skillsLineBottom"  class="line-down"></div>
+                </a>
+                <!--Projects-->
+                <a id="projects" class="route">
+                    <div id="projectsLineTop" class="line-top"></div>
+                    Projects
+                    <div id="projectsLineBottom"  class="line-down"></div>
+                </a>
+            </div>
+            <!--E N D  O F  N A V  I T E M S-->
+
+            <!-- S E T T I N G S-->
+            <!--settings list-->
+            <div class="settings-container">
+                <div id="settings" class="settings">
+                    <!--Lines-->
+                    <div class="setting-line"></div>
+                    <div class="setting-line setting-line-middle"></div>
+                    <div class="setting-line"></div>
+                </div>
+            </div>
+            <!--carousel panel-->
+            <!--language and theme switcher-->
+            <div class="lang-container">
+                <a href="{% url 'ge' %}" id="geo" class="lang geo-text">ქართული</a>
+                <div class="theme-mode">
+                    <div class="svg">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lightbulb" class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="#ffffff" id="themeSVG" d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path></svg>
+                    </div>
+                    <div class="switcher-container">
+                        <div id="way" class="railway"><div id="float" class="float"></div></div>
+                    </div>
+                </div>
+            </div>
+            <!--for small devices-->
+            <div id="smallSettings" class="for-small-device">
+                <div class="small-line"></div>
+                <div class="small-line"></div>
+                <div class="small-line"></div>
+            </div>
+            <!--E N D  O F  S E T T I N G S-->
+            <!--small device nav items list-->
+            <div id="smallNav" class="small-nav-block">
+                <a id="aboutSmall" class="sm-nav-item">About</a>
+                <a id="skillsSmall" class="sm-nav-item">Skills</a>
+                <a id="projectsSmall" class="sm-nav-item">Projects</a>
+                <a href="{% url 'ge' %}" class="sm-nav-item geo-text sm-lang">ქართული</a>
+                <div class="sm-theme-mode ms-nav-item">
+                    <div class="sm-svg">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lightbulb" class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="#ffffff" id="smThemeSVG" d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path></svg>
+                    </div>
+                    <div class="sm-switcher-container">
+                        <div id="smWay" class="sm-railway"><div id="smFloat" class="sm-float"></div></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--E N D  O F  N A V-->
+    </header>
+
+    <!--E N D  O F  H E A D E R-->
+
+    <!--M A I N-->
+    <main id="main">
+        <!--header-->
+        <!--some margin-->
+        <div class="mr-h"></div>
+        <!--Content of about block-->
+        <div id="AboutContent" class="about-container">
+            <!--Header-->
+            <h1>About</h1>
+            <!--white line-->
+            <div class="bottom-line"></div>
+            <!--Content-->
+            <div class="about-content block-content">
+                <!--image loading spinner-->
+                <div class="image-loading" id="loader">
+                    <div class="loader">Loading...</div>
+                </div>
+                <!--image block-->
+                <div class="image-wrapper" title="{{ full_name }}">
+                    <h1 id="fullName">{{ full_name }}</h1>
+                    <img draggable="false" id="myImage" src="{{ static }}img/{{ me.image }}" alt="{{ full_name }}">
+                </div>
+                <!--info-text-->
+                <div class="about-text-block" id="textBlock">
+                    <div id="buttonDown">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="#f8f9fa" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>
+                    </div>
+                    <div id="buttonUp">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="#f8f9fa" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path></svg>
+                    </div>
+                    <div id="MetaInfo">
+                        <div id="myMeta">
+                            <div id="myAge">Age: {{ age }}</div>
+                            <div id="myCountry">Country: {{ me.country }}</div>
+                            <div id="myCity">City: {{ me.city }}</div>
+                        </div>
+                        <div id="myBiography">
+                            {{ me.biography }}
+                        </div>
+                    </div>
+                </div>
+                <!--end of textblock-->
+            </div>
+        </div>
+        <!--end of about block-->
+        <!--some margin-->
+        <div class="mr-h"></div>
+        <!--some margin-->
+        <div class="mr-h"></div>
+        <!--Skills content block-->
+        <div id="SkillsContent" class="skills-container">
+            <!--header-->
+            <h1>Skills</h1>
+            <!--white line-->
+            <div class="bottom-line"></div>
+            <!--Content Block-->
+            <div class="skills-content block-content">
+                
+                <!--A R R O W S-->
+                    <!--Arrow Left-->
+                    <div id="skillScrollLeft" class="skills-arrow skills-arrow-left">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="#fff" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+                    </div>
+                    <!--Arrow Right-->
+                    <div id="skillScrollRight" class="skills-arrow skills-arrow-right">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="#fff" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                    </div>
+                <!--E N D   O F   A R R O W S-->
+
+                {% if skills|length > 14 %}
+                <div style="overflow-x: scroll;" class="skill-scroll-block" id="skillScroll">
+                    <!--looping skills from database-->
+                    {% for skill in skills %}<!--Block For {{ skill.skill_name}} -->
+                    <div class="skill-container" title="{{ skill.skill_name }}">
+                        <!-- {{ skill.skill_name }} -->
+                        <div class="skill-name">{{ skill.skill_name }}</div>
+                        <div class="skill-level"><div style="width: 0%;" class="progress">{{ skill.progress }}</div></div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="skill-scroll-block" id="skillScroll">
+                    <!--looping skills from database-->
+                    {% for skill in skills %}<!--Block For {{ skill.skill_name}} -->
+                    <div class="skill-container" title="{{ skill.skill_name }}">
+                        <!-- {{ skill.skill_name }} -->
+                        <div class="skill-name">{{ skill.skill_name }}</div>
+                        <div class="skill-level"><div style="width: 0%;" class="progress">{{ skill.progress }}</div></div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <!--End of Skills content block-->
+        <!--some margin-->
+        <div class="mr-h"></div>
+        <!--some margin-->
+        <div class="mr-h"></div>
+        <!--Projects content block-->
+        <div id="ProjectsContent" class="projects-container">
+            <!--header-->
+            <a class="projects"><h1>Projects</h1></a>
+            <!--white line-->
+            <div class="bottom-line"></div>
+            <!--Content Block-->
+            <div class="projects-wrapper">
+                {% for project in projects %}
+                <div class="project-card-container" title="{{ project.project_title }}">
+                    <div class="project-description-block">
+                        <civ class="close-button">
+                            <div class="line-1"></div>
+                            <div class="line-2"></div>
+                        </civ>
+                        <div class="my-work">
+                            <h2>Used Technologies</h2>
+                        </div>
+                        <div class="down-line"></div>
+                        <div class="used-technologies">
+                            {{ project.used_technologies }}
+                        </div>
+                        <div class="down-line"></div>
+                        <a target="blank" href="{{ project.url }}" class="project-link">
+                            Redirect to project from here!
+                        </a>
+                    </div>
+                    <div class="project-route-block">
+                        <div class="project-route-button">
+                            Details
+                        </div>
+                    </div>
+                    <div class="project-image-wrapper">
+                        <img draggable="false" class="project-image" src="{{ static }}img/{{ project.image }}" alt="{{ project.project_title }}" />
+                    </div>
+                    <div class="project-title">
+                        {{ project.project_title }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!--End of Projects content block-->
+        <div class="mr-h"></div>
+        <!--some margin-->
+        <div class="mr-h"></div>
+    </main>
+    <!--E N D  O F  M A I N-->
+
+    <!-- Scroll To Top Button -->
+    <a id="scrollToTop" class="to-top">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-double-up" class="svg-inline--fa fa-angle-double-up fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path id="toTop" fill="#007bff" d="M177 255.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 351.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 425.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1zm-34-192L7 199.7c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l96.4-96.4 96.4 96.4c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9l-136-136c-9.2-9.4-24.4-9.4-33.8 0z"></path></svg>
+    </a>
+
+    <!-- End Of Scroll To Top Button -->
+    <div class="mr-h"></div>    
+    <!--F O O T E R-->
+    <footer>
+        <!--Social Network Links-->
+        <div class="social-container">
+            <!-- Link For Github -->
+            <a href="https://github.com/DatNet13" target="blank" class="github">
+                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github-square" class="svg-inline--fa fa-github-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path id="github" fill="#f8f9fa" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"></path></svg>
+            </a>
+            <!-- Link For Facebook -->
+            <a href="https://www.facebook.com/dato.qadaria.96" target="blank" class="facebook">
+                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" class="svg-inline--fa fa-facebook-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path id="facebook" fill="#f8f9fa" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg>
+            </a>
+        </div>
+        <h1 id="copyright">© Copyright 2020</h1>
+    </footer>
+    <!--E N D  O F  F O O T E R-->
+
+    <!--S C R I P T S-->
+    <script src="{% static 'js/nav.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/skillSlide.js' %}"></script>
+    <script src="{% static 'js/aboutSlide.js' %}"></script>
+    <script src="{% static 'js/projects.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+    
+
+    <!--D Y N A M I C    S C R I P T-->
+    <script type="text/javascript">
+    let progress = document.getElementsByClassName("progress");
+    let progresses = [];
+    let len = {{ skills|length }};
+    {% for skill in skills %}progresses.push({{ skill.progress }});  // Dynamic Progress Value For {{ skill.skill_name }}
+    {% endfor %}// Dinamicly Change width of skill progressbar
+    window.addEventListener("scroll", function() {
+        let elementTarget = document.getElementById("SkillsContent");
+        for ( let i = 0; i < len; i++ ) {
+            if ( window.scrollY > ( elementTarget.offsetTop - elementTarget.offsetHeight ) && window.scrollY < ( elementTarget.offsetTop + elementTarget.offsetHeight ) ) {
+                progress[i].style.width = progresses[i] + "%";
+                progress[i].style.opacity = "1";
+            } else if ( window.scrollY > ( elementTarget.offsetTop + elementTarget.offsetHeight ) ) {
+                progress[i].style.width = "0%";
+                progress[i].style.opacity = "0";
+            } else {
+                progress[i].style.width = "0%";
+                progress[i].style.opacity = "0";
+            }
+        }
+    });
+    </script>
+    <script type="text/javascript">
+    let mode1;
+    let headd = document.getElementById("head");
+    // Big Devise
+    let float1 = document.getElementById("float");
+    // Small Device
+    let smFloat1 = document.getElementById("smFloat");
+    // Dynamic StyleSheet
+    let styleSheet = document.createElement("link");
+    styleSheet.rel = "stylesheet";
+    window.addEventListener("load", () => {
+        mode1 = localStorage.getItem("mode");
+        if( mode1 === "light" ) {
+            styleSheet.href = "{% static 'css/theme/light.css' %}";
+            headd.append(styleSheet);
+        } else if ( mode1 === "dark" ) {
+            styleSheet.remove();
+        }
+        // Dynamicly Change Href Of StyleSheet
+        // For Big Devices
+        float1.addEventListener("click", () => {
+            mode1 = localStorage.getItem("mode");
+            if( mode1 === "light" ) {
+                styleSheet.href = "{% static 'css/theme/light.css' %}";
+                headd.append(styleSheet);
+            } else if ( mode1 === "dark" ) {
+                styleSheet.remove();
+            }
+        });
+        // For Small Devices
+        smFloat1.addEventListener("click", () => {
+            mode1 = localStorage.getItem("mode");
+            if( mode1 === "light" ) {
+                styleSheet.href = "{% static 'css/theme/light.css' %}";
+                headd.append(styleSheet);
+            } else if ( mode1 === "dark" ) {
+                styleSheet.remove();
+            }
+        });
+    });
+    </script>
+</body>
+</html>

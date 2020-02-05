@@ -1,0 +1,45 @@
+#home {
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+}
+
+.route {
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Oswald", sans-serif !important;
+}
+
+#copyright {
+  font-family: "Dosis", sans-serif !important;
+}
+
+.skill-name {
+  font-family: 'Dosis', sans-serif;
+}
+
+.project-route-button {
+  font-family: "Oswald", sans-serif !important;
+}
+
+.project-description-block {
+  font-family: 'Dosis', sans-serif;
+}
+
+.project-title {
+  font-family: "Oswald", sans-serif !important;
+}
+
+#myMeta {
+  font-family: "Oswald", sans-serif !important;
+}
+
+#myBiography {
+  font-family: "Dosis", sans-serif !important;
+}
+
+#smallNav {
+  font-family: "Oswald", sans-serif !important;
+}
